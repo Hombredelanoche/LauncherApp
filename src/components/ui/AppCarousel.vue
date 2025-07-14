@@ -6,19 +6,36 @@
     type="card"
     :autoplay="false"
   >
-    <el-carousel-item v-for="(item, key) in items" :key="key">
-      <h5 text="small" @dblclick="">{{ key }}</h5>
+    <el-carousel-item v-for="(item, key) in props.items" :key="key">
+      <h5 text="small" @dblclick="openExe(item.path)">{{ key }}</h5>
     </el-carousel-item>
   </el-carousel>
 </template>
 
 <script setup lang="ts">
-defineProps({
+import { invoke } from '@tauri-apps/api/core';
+
+const props = defineProps({
   items: {
     type: Object,
     required: true
   }
 });
+
+const openExe = async (path: string) => {
+  try {
+    const filename = path.split('\\').pop();
+    if (!filename) {
+      console.error('Invalid file path:', path);
+      return;
+    } else {
+      const result = await invoke('open_executable', { path });
+      console.log(result);
+    }
+  } catch (error) {
+    console.error('Error opening executable:', error);  
+  }
+}
 </script>
 
 <style scoped>
