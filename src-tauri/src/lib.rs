@@ -23,11 +23,30 @@ fn open_executable(path: &str) -> bool {
     }
 }
 
+#[tauri::command]
+fn open_with_firefox(path: &str) -> bool {
+    if !Path::new(path).exists() {
+        eprintln!("Path does not exist: {}", path);
+        return false;
+    }
+
+    match open::that(path) {
+        Ok(_) => {
+            println!("Successfully opened with Firefox: {}", path);
+            true
+        }
+        Err(e) => {
+            eprintln!("Failed to open with Firefox: {}. Error: {}", path, e);
+            false
+        }
+    }
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![open_executable])
+        .invoke_handler(tauri::generate_handler![open_executable, open_with_firefox])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
