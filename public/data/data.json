@@ -1,0 +1,38 @@
+  {
+    "Battle.net": {
+      "path": "D:\\Jeux vidéo\\Battle.net\\Battle.net Launcher.exe",
+      "isFavorite": false
+    },
+    "Warcraft 1 Remastered": {
+      "path": "D:\\Jeux vidéo\\Warcraft I Remastered\\x86\\Warcraft.exe",
+      "isFavorite": false
+    },
+    "Warcraft 2 Remastered": {
+      "path": "D:\\Jeux vidéo\\Warcraft II Remastered\\x86\\Warcraft II.exe",
+      "isFavorite": false
+    },
+    "Warcraft 3 Remastered": {
+      "path": "D:\\Jeux vidéo\\Warcraft III Remastered\\x86\\Warcraft III.exe",
+      "isFavorite": false
+    },
+    "Wow": {
+      "path": "D:\\Jeux vidéo\\World of Warcraft\\World of Warcraft Launcher.exe",
+      "isFavorite": false
+    },
+    "Starcraft 2": {
+      "path": "D:\\Jeux vidéo\\Starcraft II\\StarCraft II.exe",
+      "isFavorite": false
+    },
+    "Launcher LOL": {
+      "path": "D:\\Jeux vidéo\\Riot Games\\Riot Client\\RiotClientServices.exe",
+      "isFavorite": false
+    },
+    "League of Legends": {
+      "path": "D:\\Jeux vidéo\\Riot Games\\League of Legends\\LeagueClient.exe",
+      "isFavorite": false
+    },
+    "Valorant": {
+      "path": "D:\\Jeux vidéo\\Riot Games\\VALORANT\\live\\VALORANT.exe",
+      "isFavorite": false
+    }
+  }
