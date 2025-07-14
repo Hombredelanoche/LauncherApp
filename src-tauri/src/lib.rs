@@ -30,7 +30,7 @@ fn open_with_firefox(path: &str) -> bool {
         return false;
     }
 
-    match open::that(path) {
+    match open::with(path, "firefox") {
         Ok(_) => {
             println!("Successfully opened with Firefox: {}", path);
             true
